@@ -3,6 +3,7 @@ let fallas = 0;
 let cont = 0;
 let contar = 0;
 let seleccion;
+
 document.getElementById("bot1").onclick = () => {
     seleccion = 1;
     principal();
@@ -20,20 +21,15 @@ document.getElementById("bot2").onclick = () => {
     document.getElementById("bot1").disabled = true;
     document.getElementById("bot2").disabled = true;
     document.getElementById("bot3").disabled = true;
-
-
 }
 document.getElementById("bot3").onclick = () => {
     seleccion = 3;
-
     principal();
     document.getElementById("btn1").hidden = false;
     document.getElementById("btn2").hidden = false;
     document.getElementById("bot1").disabled = true;
     document.getElementById("bot2").disabled = true;
     document.getElementById("bot3").disabled = true;
-
-
 }
 class Cpregunta {
     constructor(pregunta, correcto, incorrecto1, incorrecto2) {
@@ -65,14 +61,13 @@ class Cpregunta {
     }
 }
 
-
 class almacen {
     constructor() {
 
     }
     getPreguntas() {
         let reto = [];
-        reto[0] = new Cpregunta('¿Quién es el autor de el Don Quijote de la Mancha?', 'Miguel de Cervantes en 1615', 'Raphael Vellageto', 'Jorge Luis Borges');
+        reto[0] = new Cpregunta('¿Quién es el autor de el Don Quijote de la Mancha?', 'Miguel de Cervantes', 'Raphael Vellageto', 'Jorge Luis Borges');
         reto[1] = new Cpregunta('¿Quién fue el primer hombre en pisar la luna?', 'Neil Armstrong', 'Usain Bolt', 'Lance Armstrong');
         reto[2] = new Cpregunta('¿Quién fue la primera mujer en ir al espacio?', 'Valentina Tereshkova', 'Jessica Meir', 'Christina Koch');
         reto[3] = new Cpregunta('¿En qué país se encuentra el Wembley Arena?', 'Londres, en el Reino Unido', 'Estados Unidos', 'Francia');
@@ -80,7 +75,7 @@ class almacen {
         reto[5] = new Cpregunta('¿Cuál es el libro sagrado del Islam?', 'Corán', 'El Libro Negro', 'Atalaya');
         reto[6] = new Cpregunta('¿Cuál es la capital de Turquía?', 'Ankara', 'Otawa', 'Dakar');
         reto[7] = new Cpregunta('¿En qué país se utilizó la primera bomba atómica en un contexto de combate?', 'Japon-Hiroshima', 'Vietnam-Hanoi', 'Japon-Nagasaki');
-        reto[8] = new Cpregunta('¿Quién es el autor de Hamlet?', 'William Shakespeare ', 'Charles Dickens', 'Oscar Wilde');
+        reto[8] = new Cpregunta('¿Quién es el autor de Hamlet?', 'William Shakespeare', 'Charles Dickens', 'Oscar Wilde');
         reto[9] = new Cpregunta('¿Cómo se llama el estadio del F.C. Barcelona?', 'Camp Nou', 'Maracana', 'El Monumental');
         return reto;
 
@@ -152,11 +147,9 @@ class CCuestionario {
         this.preguntaActual = this.preguntas[indice];
         console.log(this.preguntas[indice])
     }
-
     getPregunta() {
         return this.preguntaActual;
     }
-
 }
 
 function genera(tamaño) {
@@ -168,7 +161,6 @@ function genera(tamaño) {
     }
 
     control.push(num);
-    console.log(control)
     return num;
 
 }
@@ -205,7 +197,7 @@ function principal() {
     }
 }
 
-document.getElementById("botones").innerHTML = '<input type="button" id="btn1" value="Siguiente"></input><input type="button" id="btn2" value="Reiniciar"></input>';
+document.getElementById("botones").innerHTML = '<input type="button" class="control" id="btn1" value="Aceptar"></input><input type="button" class="control" id="btn2" value="Reiniciar"></input>';
 document.getElementById("btn1").hidden = true;
 
 document.getElementById("btn2").hidden = true;
@@ -213,12 +205,12 @@ let a = 1;
 
 function DisplayPregunta(a, b, c, d) {
     let dis;
-    pre = "<h2>" + a + "</h2>";
-    display1 = "<input type='radio' id='uno' name='uno' value='1' >";
+    pre = "<h2 id='preg'>" + a + "</h2>";
+    display1 = "<input type='radio' id='uno' name='uno' value='1' checked>";
     dis1 = '<p><label for="uno"id="1">' + display1 + b + "</label></p>";
 
 
-    display2 = "<input type='radio' id='dos' name='uno' checked value='2' >";
+    display2 = "<input type='radio' id='dos' name='uno'  value='2' >";
     dis2 = '<p><label for="dos"id="2">' + display2 + c + "</label></p>";
 
 
@@ -229,17 +221,11 @@ function DisplayPregunta(a, b, c, d) {
 
 }
 
-
-
 function DisplayPregunta2(a, b, c, d) {
-
-    lis = '<h2>' + a + '</h2>';
-    selector = '<select name="nombre" id="jajaja"><option value="1">' + b + '</option><option value="2">' + c + '</option><option value="3">' + d + '</option></select>';
+    lis = '<h2 id="preg">' + a + '</h2>';
+    selector = '<select name="nombre" id="jajaja"><option value="0" disabled selected>**SELECCIONE</option><option value="1">' + b + '</option><option value="2">' + c + '</option><option value="3">' + d + '</option></select>';
     document.getElementById("contenedor").innerHTML = lis + selector;
-
 }
-
-
 
 document.getElementById("btn1").onclick = () => {
     let respVer;
@@ -257,34 +243,46 @@ document.getElementById("btn1").onclick = () => {
                 // window.alert("error");
 
             }
-
         }
-
     } else if (a === 2) {
         var cod = document.getElementById("jajaja").value;
-        /* Para obtener el texto */
         var combo = document.getElementById("jajaja");
         var selected = combo.options[combo.selectedIndex].text;
-
         respVer = selected;
     }
-    console.log("tru o false  " + cuestionario.getPregunta().respCorrecta(respVer));
+    document.getElementById("salir").innerText = "SIGUIENTE"
     if (cuestionario.getPregunta().respCorrecta(respVer)) {
         cont++;
-        console.log("puntos  " + cont);
-        alert("Tus puntos :" + cont);
+
+        document.getElementById("aciertos").innerText = "Aciertos :" + cont;
+        document.getElementById("final").innerText = "¡¡¡RESPUESTA CORRECTA!!!"
+        document.location = "#resultado";
     } else {
         fallas += 1;
-        alert("Respuesta Equivocada");
+        document.location = "#resultado";
+        document.getElementById("fallas").innerText = "Errores :" + fallas;
+        document.getElementById("final").innerText = "RESPUESTA INCORRECTA";
 
     }
     if (contar == 10) {
-        alert("Aciertos :" + cont + "    Errores " + fallas);
+
+        document.getElementById("final").innerText = " TUS RESPUESTAS CORRECTAS: " + cont + "  RESPUESTAS INCORRECTAS :" + fallas
+        document.location = "#resultado";
         document.getElementById('btn1').disabled = true;
-        location.reload();
+        document.getElementById("btn2").onclick = () => {
+            location.reload();
+        }
+
     } else
         principal();
 }
 document.getElementById("btn2").onclick = () => {
     location.reload();
+}
+main();
+
+function main() {
+    document.location = "#resultado";
+    document.getElementById("final").innerText = "BIENVENIDO"
+
 }
