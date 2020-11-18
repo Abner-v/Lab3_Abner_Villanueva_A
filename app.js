@@ -2,11 +2,288 @@ control = [];
 let fallas = 0;
 let cont = 0;
 let contar = 0;
-let seleccion;
+let selec = 1;
+let a = 1;
+let cor;
 
+let pregunta1 = {
+    "pregunta": '¿Quién es el autor de el Don Quijote de la Mancha?',
+    "correcto": 'Miguel de Cervantes',
+    "incorrecto1": 'Raphael Vellageto',
+    "incorrecto2": 'Jorge Luis Borges'
+}
+let pregunta2 = {
+    "pregunta": '¿Quién fue el primer hombre en pisar la luna?',
+    "correcto": 'Neil Armstrong',
+    "incorrecto1": 'Usain Bolt',
+    "incorrecto2": 'Lance Armstrong'
+}
+let pregunta3 = {
+    "pregunta": '¿Quién fue la primera mujer en ir al espacio?',
+    "correcto": 'Valentina Tereshkova',
+    "incorrecto1": 'Jessica Meir',
+    "incorrecto2": 'Christina Koch'
+}
+let pregunta4 = {
+    "pregunta": '¿En qué país se encuentra el Wembley Arena?',
+    "correcto": 'Londres, en el Reino Unido',
+    "incorrecto1": 'Estados Unidos',
+    "incorrecto2": 'Francia'
+}
+let pregunta5 = {
+    "pregunta": 'Según la Biblia, ¿quién traicionó a Jesús?',
+    "correcto": 'Judas',
+    "incorrecto1": 'Juan',
+    "incorrecto2": 'Pedro'
+}
+let pregunta6 = {
+    "pregunta": '¿Cuál es el libro sagrado del Islam?',
+    "correcto": 'Corán',
+    "incorrecto1": 'El Libro Negro',
+    "incorrecto2": 'Atalaya'
+}
+let pregunta7 = {
+    "pregunta": '¿Cuál es la capital de Turquía?',
+    "correcto": 'Ankara',
+    "incorrecto1": 'Otawa',
+    "incorrecto2": 'Dakar'
+}
+let pregunta8 = {
+    "pregunta": '¿En qué país se utilizó la primera bomba atómica en un contexto de combate?',
+    "correcto": 'Japon-Hiroshima',
+    "incorrecto1": 'Vietnam-Hanoi',
+    "incorrecto2": 'Japon-Nagasaki'
+}
+let pregunta9 = {
+    "pregunta": '¿Quién es el autor de Hamlet?',
+    "correcto": 'William Shakespeare',
+    "incorrecto1": 'Charles Dickens',
+    "incorrecto2": 'Oscar Wilde'
+}
+let pregunta10 = {
+    "pregunta": '¿Cómo se llama el estadio del F.C. Barcelona?',
+    "correcto": 'Camp Nou',
+    "incorrecto1": 'Maracana',
+    "incorrecto2": 'El Monumental'
+}
+let pregunta11 = {
+    "pregunta": '¿A cuánto equivale π?',
+    "correcto": '3,141592',
+    "incorrecto1": '3,149215',
+    "incorrecto2": '3,144123'
+}
+let pregunta12 = {
+    "pregunta": '7/5 + 2/3 - 1 =',
+    "correcto": '16/15',
+    "incorrecto1": '1',
+    "incorrecto2": '17/15'
+}
+let pregunta13 = {
+    "pregunta": '¿Qué formula es esta? S = π x R²',
+    "correcto": 'Superficie de un círculo',
+    "incorrecto1": 'Diámetro de un círculo',
+    "incorrecto2": 'Volumen de un cilindro'
+}
+let pregunta14 = {
+    "pregunta": '¿Qué expresa esta formula? e = mc²',
+    "correcto": 'Equivalencia entre masa y energía',
+    "incorrecto1": 'La teoría de la probabilidad',
+    "incorrecto2": 'Volumen de un cubo'
+}
+let pregunta15 = {
+    "pregunta": '¿Cuáles de los siguientes triángulos,según sus medidas son rectángulos?',
+    "correcto": '3 cm, 4 cm, 5 cm',
+    "incorrecto1": '3 cm, 4 cm, 7 cm ',
+    "incorrecto2": '7 cm, 4 cm, 6 cm'
+}
+let pregunta16 = {
+    "pregunta": 'Juan tiene 20 años menos que su padre y este tiene el triple de los años de su hijo. ¿Qué edad tienen cada uno?',
+    "correcto": '10 juan, 30 el padre',
+    "incorrecto1": '11 Juan, 31 el padre',
+    "incorrecto2": '13 Juan, 33 el padre '
+}
+let pregunta17 = {
+    "pregunta": '¿Qué es un triángulo isósceles?',
+    "correcto": 'Un tipo de triángulo que tiene dos lados de igual longitud',
+    "incorrecto1": 'Un tipo de triángulo que tiene los tres lados  desiguales',
+    "incorrecto2": 'Un tipo de triángulo que tiene tiene todos sus lados iguales'
+}
+let pregunta18 = {
+    "pregunta": '¿Cómo se llama a un poliedro de 20 caras?',
+    "correcto": 'icosaedro',
+    "incorrecto1": 'dodecaedro',
+    "incorrecto2": 'apeiroedro'
+}
+let pregunta19 = {
+    "pregunta": 'Cómo puedes comprobar si has hecho bien una división.',
+    "correcto": 'Multiplicando el cociente por el divisor y sumando el resto si lo hay',
+    "incorrecto1": 'Volviéndola a hacer',
+    "incorrecto2": 'Sumando el cociente por el divisor y el resto'
+}
+let pregunta20 = {
+    "pregunta": 'Cuánto es un lustro',
+    "correcto": 'cinco años',
+    "incorrecto1": 'cincuenta años',
+    "incorrecto2": 'quinientos años'
+}
+let pregunta21 = {
+    "pregunta": '¿Cómo se llama el componente mínimo que forma a los seres vivos?',
+    "correcto": 'Célula',
+    "incorrecto1": 'Tejido',
+    "incorrecto2": 'Partícula'
+}
+let pregunta22 = {
+    "pregunta": 'El proceso por el que una célula se divide para formar dos células hijas se llama:',
+    "correcto": 'Mitosis',
+    "incorrecto1": 'Segregación',
+    "incorrecto2": 'Meiosis'
+}
+let pregunta23 = {
+    "pregunta": 'La información genética en las células se localiza:',
+    "correcto": 'En el nucleo',
+    "incorrecto1": 'En la membrana',
+    "incorrecto2": 'En el citoplasma'
+}
+let pregunta24 = {
+    "pregunta": '¿Con qué respira una ballena?',
+    "correcto": 'Pulmones',
+    "incorrecto1": 'Por la piel',
+    "incorrecto2": 'Branquias'
+}
+let pregunta25 = {
+    "pregunta": 'Para los botánicos, el tomate es una:',
+    "correcto": 'Fruta',
+    "incorrecto1": 'Hortaliza',
+    "incorrecto2": 'Verdura'
+}
+let pregunta26 = {
+    "pregunta": 'La fuerza física que la tierra ejerce sobre los cuerpos hacia su centro es la:',
+    "correcto": 'Gravedad',
+    "incorrecto1": 'Normal',
+    "incorrecto2": 'Rozamiento'
+}
+let pregunta27 = {
+    "pregunta": 'La velocidad a la que viaja la luz es',
+    "correcto": '300,000 km/s',
+    "incorrecto1": '300,000 m/s',
+    "incorrecto2": '30,000 km/h'
+}
+let pregunta28 = {
+    "pregunta": '¿Cómo se llaman las partículas subatómicas con carga eléctrica negativa?',
+    "correcto": 'Electrones',
+    "incorrecto1": 'Protones',
+    "incorrecto2": 'Neutrones'
+}
+let pregunta29 = {
+    "pregunta": '¿Cuál es la principal función de los globulos rojos?',
+    "correcto": 'Llevar oxígeno',
+    "incorrecto1": 'Coagular la sangre',
+    "incorrecto2": 'Combatir enfermedades'
+}
+let pregunta30 = {
+    "pregunta": 'Los cromosomas están formados por:',
+    "correcto": 'ADN (ácido desoxirribonucleico)',
+    "incorrecto1": 'Proteínas',
+    "incorrecto2": 'ARN (ácido ribonucleico)'
+}
+
+function seleccion(indice) {
+    switch (indice) {
+        case 1:
+            return pregunta1;
+            break;
+        case 2:
+            return pregunta2;
+            break;
+        case 3:
+            return pregunta3;
+            break;
+        case 4:
+            return pregunta4;
+            break;
+        case 5:
+            return pregunta5;
+            break;
+        case 6:
+            return pregunta6;
+            break;
+        case 7:
+            return pregunta7;
+            break;
+        case 8:
+            return pregunta8;
+            break;
+        case 9:
+            return pregunta9;
+            break;
+        case 10:
+            return pregunta10;
+            break;
+        case 11:
+            return pregunta11;
+            break;
+        case 12:
+            return pregunta12;
+            break;
+        case 13:
+            return pregunta13;
+            break;
+        case 14:
+            return pregunta14;
+            break;
+        case 15:
+            return pregunta15;
+            break;
+        case 16:
+            return pregunta16;
+            break;
+        case 17:
+            return pregunta17;
+            break;
+        case 18:
+            return pregunta18;
+            break;
+        case 19:
+            return pregunta19;
+            break;
+        case 20:
+            return pregunta20;
+            break;
+        case 21:
+            return pregunta21;
+            break;
+        case 22:
+            return pregunta22;
+            break;
+        case 23:
+            return pregunta23;
+            break;
+        case 24:
+            return pregunta24;
+            break;
+        case 26:
+            return pregunta26;
+            break;
+        case 25:
+            return pregunta25;
+            break;
+        case 27:
+            return pregunta27;
+            break;
+        case 28:
+            return pregunta28;
+            break;
+        case 29:
+            return pregunta29;
+            break;
+        case 30:
+            return pregunta30;
+            break;
+    }
+}
 document.getElementById("bot1").onclick = () => {
-    seleccion = 1;
-    principal();
+    selec = 1;
+    controlador();
     document.getElementById("btn1").hidden = false;
     document.getElementById("btn2").hidden = false;
     document.getElementById("bot1").disabled = true;
@@ -14,8 +291,8 @@ document.getElementById("bot1").onclick = () => {
     document.getElementById("bot3").disabled = true;
 }
 document.getElementById("bot2").onclick = () => {
-    seleccion = 2;
-    principal();
+    selec = 2;
+    controlador();
     document.getElementById("btn1").hidden = false;
     document.getElementById("btn2").hidden = false;
     document.getElementById("bot1").disabled = true;
@@ -23,185 +300,53 @@ document.getElementById("bot2").onclick = () => {
     document.getElementById("bot3").disabled = true;
 }
 document.getElementById("bot3").onclick = () => {
-    seleccion = 3;
-    principal();
+    selec = 3;
+    controlador();
     document.getElementById("btn1").hidden = false;
     document.getElementById("btn2").hidden = false;
     document.getElementById("bot1").disabled = true;
     document.getElementById("bot2").disabled = true;
     document.getElementById("bot3").disabled = true;
 }
-class Cpregunta {
-    constructor(pregunta, correcto, incorrecto1, incorrecto2) {
-        this.pregunta = pregunta;
-        this.correcto = correcto;
-        this.incorrecto1 = incorrecto1;
-        this.incorrecto2 = incorrecto2;
-    }
-    getTexto() {
-        return this.pregunta;
-    }
-    getRespuestasPosibles() {
-        let respuesta = [this.correcto, this.incorrecto1, this.incorrecto2];
-        var n = respuesta.length - 1;
-        while (n + 1 > 1) {
-            var indice = Math.round(Math.random() * (n--));
-            var temp = respuesta[n];
-            respuesta[n] = respuesta[indice];
-            respuesta[indice] = temp;
-            /* console.log(indice);*/
-        }
-        return respuesta;
-    }
-    respCorrecta(respondio) {
-        if (respondio === this.correcto)
-            return true
-        else
-            return false
-    }
-}
+console.log("esta es el resultado" + pregunta1)
+console.log(pregunta1["pregunta"]);
+console.log(pregunta1["correcto"]);
+console.log(pregunta1["incorrecto1"]);
+console.log(pregunta1["incorrecto2"]);
 
-class almacen {
-    constructor() {
-
-    }
-    getPreguntas() {
-        let reto = [];
-        reto[0] = new Cpregunta('¿Quién es el autor de el Don Quijote de la Mancha?', 'Miguel de Cervantes', 'Raphael Vellageto', 'Jorge Luis Borges');
-        reto[1] = new Cpregunta('¿Quién fue el primer hombre en pisar la luna?', 'Neil Armstrong', 'Usain Bolt', 'Lance Armstrong');
-        reto[2] = new Cpregunta('¿Quién fue la primera mujer en ir al espacio?', 'Valentina Tereshkova', 'Jessica Meir', 'Christina Koch');
-        reto[3] = new Cpregunta('¿En qué país se encuentra el Wembley Arena?', 'Londres, en el Reino Unido', 'Estados Unidos', 'Francia');
-        reto[4] = new Cpregunta('Según la Biblia, ¿quién traicionó a Jesús?', 'Judas', 'Juan', 'Pedro');
-        reto[5] = new Cpregunta('¿Cuál es el libro sagrado del Islam?', 'Corán', 'El Libro Negro', 'Atalaya');
-        reto[6] = new Cpregunta('¿Cuál es la capital de Turquía?', 'Ankara', 'Otawa', 'Dakar');
-        reto[7] = new Cpregunta('¿En qué país se utilizó la primera bomba atómica en un contexto de combate?', 'Japon-Hiroshima', 'Vietnam-Hanoi', 'Japon-Nagasaki');
-        reto[8] = new Cpregunta('¿Quién es el autor de Hamlet?', 'William Shakespeare', 'Charles Dickens', 'Oscar Wilde');
-        reto[9] = new Cpregunta('¿Cómo se llama el estadio del F.C. Barcelona?', 'Camp Nou', 'Maracana', 'El Monumental');
-        return reto;
-
-    }
-    getPreguntas1() {
-        let reto = [];
-        reto[0] = new Cpregunta('¿A cuánto equivale π?', '3,141592', '3,149215', '3,144123');
-        reto[1] = new Cpregunta('7/5 + 2/3 - 1 =', '16/15', '1', '17/15');
-        reto[2] = new Cpregunta('¿Qué formula es esta? S = π x R²', 'Superficie de un círculo', 'Diámetro de un círculo', 'Volumen de un cilindro');
-        reto[3] = new Cpregunta('¿Qué expresa esta formula? e = mc²', 'Equivalencia entre masa y energía', 'La teoría de la probabilidad', 'Volumen de un cubo');
-        reto[4] = new Cpregunta('¿Cuáles de los siguientes triángulos, según sus medidas son rectángulos?', '3 cm, 4 cm, 5 cm', '3 cm, 4 cm, 7 cm ', '7 cm, 4 cm, 6 cm');
-        reto[5] = new Cpregunta('Juan tiene 20 años menos que su padre y este tiene el triple de los años de su hijo. ¿Qué edad tienen cada uno?', '10 juan, 30 el padre', '11 Juan, 31 el padre', '13 Juan, 33 el padre ');
-        reto[6] = new Cpregunta('¿Qué es un triángulo isósceles?', 'Un tipo de triángulo que tiene dos lados de igual longitud', 'Un tipo de triángulo que tiene los tres lados  desiguales', 'Un tipo de triángulo que tiene tiene todos sus lados iguales');
-        reto[7] = new Cpregunta('¿Cómo se llama a un poliedro de 20 caras?', 'icosaedro', 'dodecaedro', 'apeiroedro');
-        reto[8] = new Cpregunta('Cómo puedes comprobar si has hecho bien una división.', 'Multiplicando el cociente por el divisor y sumando el resto si lo hay', 'Volviéndola a hacer', 'Sumando el cociente por el divisor y el resto');
-        reto[9] = new Cpregunta('Cuánto es un lustro', 'cinco años', 'cincuenta años', 'quinientos años');
-        return reto;
-    }
-    getPreguntas2() {
-        let reto = [];
-        reto[0] = new Cpregunta('¿Cómo se llama el componente mínimo que forma a los seres vivos?', 'Célula', 'Tejido', 'Partícula');
-        reto[1] = new Cpregunta('El proceso por el que una célula se divide para formar dos células hijas se llama:', 'Mitosis', 'Segregación', 'Meiosis');
-        reto[2] = new Cpregunta('La información genética en las células se localiza:', 'En el nucleo', 'En la membrana', 'En el citoplasma');
-        reto[3] = new Cpregunta('¿Con qué respira una ballena?', 'Pulmones', 'Por la piel', 'Branquias');
-        reto[4] = new Cpregunta('Para los botánicos, el tomate es una:', 'Fruta', 'Hortaliza', 'Verdura');
-        reto[5] = new Cpregunta('La fuerza física que la tierra ejerce sobre los cuerpos hacia su centro es la:', 'Gravedad', 'Normal', 'Rozamiento');
-        reto[6] = new Cpregunta('La velocidad a la que viaja la luz es', '300,000 km/s', '300,000 m/s', '30,000 km/h');
-        reto[7] = new Cpregunta('¿Cómo se llaman las partículas subatómicas con carga eléctrica negativa?', 'Electrones', 'Protones', 'Neutrones');
-        reto[8] = new Cpregunta('¿Cuál es la principal función de los globulos rojos?', 'Llevar oxígeno', 'Coagular la sangre', 'Combatir enfermedades');
-        reto[9] = new Cpregunta('Los cromosomas están formados por:', 'ADN (ácido desoxirribonucleico)', 'Proteínas', 'ARN (ácido ribonucleico)');
-        return reto;
-
-    }
-    mostra() {
-        let lista = this.getPreguntas1();
-        lista.forEach(element => {
-            console.log(element.getTexto());
-
-        });
-    }
-
-}
-const li = new almacen();
-li.mostra();
-
-class CCuestionario {
-    constructor() {
-        this.preguntas = [];
-        this.preguntaActual = new Cpregunta;
-        this.listas = new almacen();
-    }
-
-    Ccuestionario() {
-        if (seleccion == 1) {
-            this.preguntas = this.listas.getPreguntas();
-        } else if (seleccion == 2) {
-            this.preguntas = this.listas.getPreguntas1();
-        } else
-            this.preguntas = this.listas.getPreguntas2();
-        this.GenerarPregunta();
-        // console.log(this.preguntas);
-
-    }
-    GenerarPregunta() { //nuevaPregunta
-        var indice = genera(this.preguntas.length);
-        //   var cual = Math.round(Math.random() * ((this.preguntas.length) - 1));
-
-        console.log(indice);
-        this.preguntaActual = this.preguntas[indice];
-        console.log(this.preguntas[indice])
-    }
-    getPregunta() {
-        return this.preguntaActual;
-    }
-}
-
-function genera(tamaño) {
-    let num;
-    let repe;
-    while (repe != false) {
-        num = Math.round(Math.random() * ((tamaño) - 1));
-        repe = repetida(num);
-    }
-
-    control.push(num);
-    return num;
-
-}
-
-function repetida(x) {
-    repe = false;
-    for (i = 0; i < control.length; i++) {
-        if (x == control[i]) {
-            repe = true;
-        }
-    }
-    return repe;
-}
-
-
-function principal() {
+function mostrar(sel) {
     ran = Math.round(Math.random() * 2);
-    this.cuestionario = new CCuestionario();
-    this.cuestionario.Ccuestionario();
-    this.pregunta = Cpregunta;
-    this.pregunta = this.cuestionario.getPregunta();
-    this.preg = this.pregunta.pregunta;
-    lista = this.pregunta.getRespuestasPosibles();
-    this.resp1 = lista[0];
-    this.resp2 = lista[1];
-    this.resp3 = lista[2];
-
+    ind = genera(sel);
+    console.log("indice generado: " + ind);
+    ax = seleccion(ind);
+    for (const propiedad in ax) {
+        console.log("este es la respuesta  " + propiedad + " " + ax[propiedad]);
+    }
+    preg = ax["pregunta"];
+    cor = ax["correcto"];
+    inc1 = ax["incorrecto1"];
+    inc2 = ax["incorrecto2"];
+    ordResp = RespuestasPosibles(cor, inc1, inc2);
+    resp1 = ordResp[0];
+    resp2 = ordResp[1];
+    resp3 = ordResp[2];
     if (ran === 1) {
-        DisplayPregunta(this.preg, this.resp1, this.resp2, this.resp3);
+        DisplayPregunta(preg, resp1, resp2, resp3);
         a = 1;
     } else {
-        DisplayPregunta2(this.preg, this.resp1, this.resp2, this.resp3);
+        DisplayPregunta2(preg, resp1, resp2, resp3);
         a = 2;
     }
-}
+    for (const propiedad in ordResp) {
+        console.log("este es la respuesta  " + propiedad + " " + ordResp[propiedad]);
+    }
 
+    console.log(typeof(ax));
+
+}
 document.getElementById("botones").innerHTML = '<input type="button" class="control" id="btn1" value="Aceptar"></input><input type="button" class="control" id="btn2" value="Reiniciar"></input>';
 document.getElementById("btn1").hidden = true;
-
 document.getElementById("btn2").hidden = true;
-let a = 1;
 
 function DisplayPregunta(a, b, c, d) {
     let dis;
@@ -227,6 +372,61 @@ function DisplayPregunta2(a, b, c, d) {
     document.getElementById("contenedor").innerHTML = lis + selector;
 }
 
+
+
+function genera(but) {
+    let num;
+    let repe;
+    if (but === 1) {
+        minimo = 1;
+        maximo = 10;
+    } else if (but === 2) {
+        minimo = 11;
+        maximo = 20;
+    } else {
+        minimo = 21;
+        maximo = 30;
+    }
+    while (repe != false) {
+        num = Math.round(Math.random() * (maximo - minimo) + minimo);
+        repe = repetida(num);
+    }
+    control.push(num);
+    console.log(control);
+    return num;
+
+}
+
+function repetida(x) {
+    repe = false;
+    for (i = 0; i < control.length; i++) {
+        if (x == control[i]) {
+            repe = true;
+        }
+    }
+    return repe;
+}
+
+function RespuestasPosibles(a, b, c) {
+    let respuesta = [a, b, c];
+    var n = respuesta.length - 1;
+    while (n + 1 > 1) {
+        var indice = Math.round(Math.random() * (n--));
+        var temp = respuesta[n];
+        respuesta[n] = respuesta[indice];
+        respuesta[indice] = temp;
+
+    }
+    return respuesta;
+}
+
+function respCorrecta(correcto, respondio) {
+    if (respondio === correcto)
+        return true
+    else
+        return false
+}
+
 document.getElementById("btn1").onclick = () => {
     let respVer;
     contar += 1;
@@ -240,8 +440,6 @@ document.getElementById("btn1").onclick = () => {
                 cod = radioButTrat[i].value;
                 respVer = document.getElementById(cod).textContent;
                 console.log(document.getElementById(cod).textContent);
-                // window.alert("error");
-
             }
         }
     } else if (a === 2) {
@@ -250,8 +448,8 @@ document.getElementById("btn1").onclick = () => {
         var selected = combo.options[combo.selectedIndex].text;
         respVer = selected;
     }
-    document.getElementById("salir").innerText = "SIGUIENTE"
-    if (cuestionario.getPregunta().respCorrecta(respVer)) {
+    document.getElementById("salir").innerText = "SIGUIENTE" //llamo funcion es correcta
+    if (respCorrecta(cor, respVer)) {
         cont++;
 
         document.getElementById("aciertos").innerText = "Aciertos :" + cont;
@@ -274,10 +472,14 @@ document.getElementById("btn1").onclick = () => {
         }
 
     } else
-        principal();
+        mostrar(selec);
 }
 document.getElementById("btn2").onclick = () => {
     location.reload();
+}
+
+function controlador() {
+    mostrar(selec);
 }
 main();
 
